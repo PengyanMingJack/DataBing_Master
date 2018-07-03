@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="allvideo.pym.com.app2.App2" />
+
+        <import type="allvideo.pym.com.app2.MFragment" />
+
+        <variable
+            name="app"
+            type="App2" />
+
+        <variable
+            name="str"
+            type="android.databinding.ObservableField&lt;String>" />
+        <variable
+            name="click"
+            type="MFragment" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@{app.name}"
+                android:visibility='@{app.isShow?View.VISIBLE:View.GONE}' />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@{str}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="60dp"
+                android:onClick="@{click.Click1}"
+                android:text="点我1" />
+
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="60dp"
+                android:onClick="@{click.Click2}"
+                android:text="点我2" />
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycleview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"></android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+</layout>

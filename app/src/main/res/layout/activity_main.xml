@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?><!--suppress ALL -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="allvideo.pym.com.databing_master.Data" />
+
+        <import type="android.view.View" />
+
+        <import type="java.util.List" />
+
+        <import type="java.util.HashMap" />
+
+        <import type="allvideo.pym.com.databing_master.EventClick" />
+
+        <variable
+            name="stu"
+            type="Data" />
+
+        <variable
+            name="str"
+            type="String" />
+
+        <variable
+            name="err"
+            type="boolean" />
+
+        <variable
+            name="num"
+            type="int" />
+
+        <variable
+            name="list"
+            type="List&lt;String>" />
+
+        <variable
+            name="map"
+            type="HashMap&lt;String,String>" />
+
+        <variable
+            name="array"
+            type="String[]" />
+
+        <variable
+            name="listKey"
+            type="int" />
+
+        <variable
+            name="mapKey"
+            type="String" />
+
+        <variable
+            name="arrayKey"
+            type="int" />
+
+        <variable
+            name="hander"
+            type="EventClick" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{stu.name}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{str}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{err ? "error":"ok"}' />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(num)}"
+            android:visibility='@{num>0?View.GONE:View.VISIBLE}' />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{list[listKey]}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{map[`name`]}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{array[arrayKey]}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{hander.handerClick}"
+            android:text="点击" />
+    </LinearLayout>
+
+</layout>
